@@ -2,7 +2,7 @@
   "name": "SingleResponsibility",
   "version": "1.0.0",
   "description": "",
-  "main": "old.js",
+  "main": "new.js",
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html"
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/JensDeNijs/SingleResponsibility/issues"
   },
-  "homepage": "https://github.com/JensDeNijs/SingleResponsibility#readme"
+  "homepage": "https://github.com/JensDeNijs/SingleResponsibility#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
 }
