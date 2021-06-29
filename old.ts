@@ -1,3 +1,4 @@
+/*
 
 
 // When you see <cast>variable this is a "cast" of a variable, explicitly telling the code what the type of this variable will be.
@@ -73,3 +74,4 @@ setInterval(() => {
     }
 
 }, 1000);
+*/

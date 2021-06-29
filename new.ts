@@ -33,11 +33,29 @@ musicSliderElement.addEventListener('input', (event) => {
     musicToggleElement.innerText = car.musicPlayer.musicLevel ? 'Turn music off' : 'Turn music on';
 });
 
+engineToggleElement.addEventListener('click', () => {
+    if(car.engine.engineStatus) {
+        car.engine.turnEngineOff();
+        engineToggleElement.innerText = 'Turn engine on';
+        return;
+    }
+    engineToggleElement.innerText = 'Turn engine off';
+    car.engine.turnEngineOn();
+});
 
+
+addFuelForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    car.addFuel(Number(addFuelInput.value));
+    fuelLevelElement.innerText = car.fuel.toString();
+});
 
 
 setInterval(() => {
-
+    car.drive();
+    milesElement.innerText = <string><unknown>(car.miles);
+    fuelLevelElement.innerText = car.fuel.toString();
 
     if(car.musicPlayer.musicLevel === 0) {
         audioElement.pause();
