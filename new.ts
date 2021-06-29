@@ -1,5 +1,4 @@
 import {Car} from "./classes/Car";
-import {MusicPlayer} from "./classes/MusicPlayer";
 
 const musicToggleElement = <HTMLElement>document.querySelector('#music-toggle');
 const musicSliderElement = <HTMLInputElement>document.querySelector('#music-slider');
@@ -47,15 +46,15 @@ engineToggleElement.addEventListener('click', () => {
 addFuelForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    car.addFuel(Number(addFuelInput.value));
-    fuelLevelElement.innerText = car.fuel.toString();
+    car.fuelTank.addFuel(Number(addFuelInput.value));
+    fuelLevelElement.innerText = car.fuelTank.fuel.toString();
 });
 
 
 setInterval(() => {
     car.drive();
     milesElement.innerText = <string><unknown>(car.miles);
-    fuelLevelElement.innerText = car.fuel.toString();
+    fuelLevelElement.innerText = car.fuelTank.fuel.toString();
 
     if(car.musicPlayer.musicLevel === 0) {
         audioElement.pause();
